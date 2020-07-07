@@ -1,9 +1,9 @@
 <template>
   <div>
-    <el-breadcrumb separator="/">
+    <el-breadcrumb separator=">">
       <el-breadcrumb-item v-for="(item,index) in breadList"
                           :key="index" :to="{ path: item.path }">
-        {{item.meta.title}}</el-breadcrumb-item>
+        {{item.title ? item.title : item}}</el-breadcrumb-item>
     </el-breadcrumb>
   </div>
 </template>
@@ -30,7 +30,14 @@ export default {
       if (!this.isHome(match[0])) {
         match = [{ path: '/home', meta: { title: '首页' } }].concat(match)
       }
-      this.breadList = match
+      this.breadList.length = 0
+      for (const item of match) {
+        if (item.meta.title instanceof Array) {
+          this.breadList = this.breadList.concat(item.meta.title)
+        } else {
+          this.breadList.push({ path: item.path, title: item.meta.title })
+        }
+      }
     }
   },
   created () {

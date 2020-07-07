@@ -27,13 +27,19 @@ const routes = [
         path: '/users',
         name: 'Users',
         component: () => import('../components/users/Users'),
-        meta: { title: '用户管理' }
+        meta: { title: ['用户管理', '用户列表'] }
       },
       {
         path: '/rights',
         name: 'Rights',
         component: () => import('../components/power/Rights'),
-        meta: { title: '权限管理' }
+        meta: { title: ['权限管理', '权限列表'] }
+      },
+      {
+        path: '/roles',
+        name: 'Roles',
+        component: () => import('../components/power/Roles'),
+        meta: { title: ['权限管理', '角色列表'] }
       }
     ]
   },
