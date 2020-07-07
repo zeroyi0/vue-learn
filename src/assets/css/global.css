@@ -1,0 +1,31 @@
+html, body, #app {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+.el-breadcrumb {
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+/* 卡片 */
+.el-card {
+    box-shadow: 0 1px 1px 0px rgba(0, 0, 0, 0.15) !important;
+}
+.el-container {
+    height: 100%;
+    width: 100%;
+}
+.el-header {
+    padding: 0;
+}
+.el-aside {
+    width: auto !important;
+}
+.el-table {
+    margin: 15px 0;
+    font-size: 13px;
+}
+/* 中间容器 */
+.body {
+    background: rgba(0, 0, 0, 0.01);
+}
